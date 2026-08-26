@@ -1,0 +1,16 @@
+16:41:22 **** Build of configuration Debug for project first_ ****
+make -j8 all 
+arm-none-eabi-gcc -o "first_.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Study\STM32\OJ_tube\first_\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="first_.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: first_.elf
+ 
+arm-none-eabi-size  first_.elf 
+arm-none-eabi-objdump -h -S first_.elf  > "first_.list"
+   text	   data	    bss	    dec	    hex	filename
+   8640	     12	   1644	  10296	   2838	first_.elf
+Finished building: default.size.stdout
+ 
+Finished building: first_.list
+ 
+
+16:41:24 Build Finished. 0 errors, 0 warnings. (took 2s.159ms)
+

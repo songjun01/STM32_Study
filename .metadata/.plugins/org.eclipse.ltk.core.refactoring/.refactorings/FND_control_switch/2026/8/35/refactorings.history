@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FND_control_switch/FND_control.ioc&apos; to &apos;FND_control_switch.ioc&apos;" description="Rename resource &apos;FND_control.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FND_control.ioc" name="FND_control_switch.ioc" stamp="1787547369067" updateReferences="true"/>
+</session>

@@ -1,0 +1,24 @@
+16:41:14 **** Build of configuration Debug for project GPIO_HAL_X ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:91:32: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+   91 |   volatile unsigned int *reg = 0x40020014;  // AHB1 GPIOA_BASE(0x40020000) + GPIOA_ODR(0x14)
+      |                                ^~~~~~~~~~
+../Core/Src/main.c:105:33: warning: initialization of 'volatile unsigned int *' from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  105 |   volatile unsigned int *reg2 = 0x40020018;
+      |                                 ^~~~~~~~~~
+arm-none-eabi-gcc -o "GPIO_HAL_X.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Study\STM32\OJ_tube\GPIO_HAL_X\STM32F446RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_HAL_X.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPIO_HAL_X.elf
+ 
+arm-none-eabi-size  GPIO_HAL_X.elf 
+arm-none-eabi-objdump -h -S GPIO_HAL_X.elf  > "GPIO_HAL_X.list"
+   text	   data	    bss	    dec	    hex	filename
+   6468	     12	   1572	   8052	   1f74	GPIO_HAL_X.elf
+Finished building: default.size.stdout
+ 
+Finished building: GPIO_HAL_X.list
+ 
+
+16:41:17 Build Finished. 0 errors, 2 warnings. (took 3s.227ms)
+

@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void send(uint8_t x)
+{
+	for (int i = 8; i >= 1; i--)
+	{
+		if (x & 0x80)
+		{
+			HAL_GPIO_WritePin(PB14_FND_DIO_GPIO_Port, PB14_FND_DIO_Pin, 1);
+		}
+		else
+		{
+			HAL_GPIO_WritePin(PB14_FND_DIO_GPIO_Port, PB14_FND_DIO_Pin, 0);
+		}
+		x <<= 1;
+		HAL_GPIO_WritePin(PB15_FND_SCLK_GPIO_Port, PB15_FND_SCLK_Pin, 0);
+		HAL_GPIO_WritePin(PB15_FND_SCLK_GPIO_Port, PB15_FND_SCLK_Pin, 1);
+	}
+}

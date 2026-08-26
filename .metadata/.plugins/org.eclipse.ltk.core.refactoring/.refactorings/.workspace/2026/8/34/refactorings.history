@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FND_module&apos; to &apos;FND_control&apos;" description="Rename resource &apos;FND_module&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/FND_module" name="FND_control" stamp="1787205941122" updateReferences="true"/>
+</session>

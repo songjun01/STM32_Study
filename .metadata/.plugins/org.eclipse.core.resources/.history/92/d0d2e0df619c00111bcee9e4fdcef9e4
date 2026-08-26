@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void send(uint8_t x)
+{
+	// 입력 데이터 x를 0x80(1000 0000)과 AND 연산하여 HIGH 또는 LOW로 변환해 하나의 데이터 생성
+	// 예) x = 0x46(0100 0110) 일 때, 출력 파형은 LOW/HIGH/LOW/LOW/LOW/HIGH/HIGH/LOW
+	for (int i = 8; i >= 1; i--)
+	{
+		if (x & 0x80)
+		{
+			HAL_GPIO_WritePin(PB14_FND_DIO_GPIO_Port, PB14_FND_DIO_Pin, 1);
+		}
+		else
+		{
+			HAL_GPIO_WritePin(PB14_FND_DIO_GPIO_Port, PB14_FND_DIO_Pin, 0);
+		}
+		x <<= 1;
+
+		// 클럭 생성 부분. 시작 클럭은 HIGH. TM74HC595 칩 데이터시트 참조
+		HAL_GPIO_WritePin(PB15_FND_SCLK_GPIO_Port, PB15_FND_SCLK_Pin, 0);
+		HAL_GPIO_WritePin(PB15_FND_SCLK_GPIO_Port, PB15_FND_SCLK_Pin, 1);
+	}
+}
+
+
+void send_port(uint8_t x, uint8_t port)
+{
+	send(x);
+	send(port);
+	HAL_GPIO_WritePin(PB13_FND_RCLK_GPIO_Port, PB13_FND_RCLK_Pin, 0);
+	HAL_GPIO_WritePin(PB13_FND_RCLK_GPIO_Port, PB13_FND_RCLK_Pin, 1);
+}

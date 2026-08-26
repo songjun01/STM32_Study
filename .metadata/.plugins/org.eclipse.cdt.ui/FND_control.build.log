@@ -1,0 +1,17 @@
+18:13:41 **** Incremental Build of configuration Debug for project FND_control ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "FND_control.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Study\STM32\OJ_tube\FND_module\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FND_control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FND_control.elf
+ 
+arm-none-eabi-size  FND_control.elf 
+arm-none-eabi-objdump -h -S FND_control.elf  > "FND_control.list"
+   text	   data	    bss	    dec	    hex	filename
+   6984	     12	   1604	   8600	   2198	FND_control.elf
+Finished building: default.size.stdout
+ 
+Finished building: FND_control.list
+ 
+
+18:13:42 Build Finished. 0 errors, 0 warnings. (took 717ms)
+
