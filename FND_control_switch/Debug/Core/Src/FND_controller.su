@@ -4,7 +4,7 @@
 ../Core/Src/FND_controller.c:98:6:digit4	48	static
 ../Core/Src/FND_controller.c:127:6:digit4_replay	16	static
 ../Core/Src/FND_controller.c:133:6:digit4_n	16	static
-../Core/Src/FND_controller.c:139:6:digit4ShowZero	16	static
+../Core/Src/FND_controller.c:139:6:digit4ShowZero_replay	16	static
 ../Core/Src/FND_controller.c:145:6:digit4ShowZero_n	16	static
 ../Core/Src/FND_controller.c:151:6:digit2	40	static
 ../Core/Src/FND_controller.c:165:6:digit2_port	16	static

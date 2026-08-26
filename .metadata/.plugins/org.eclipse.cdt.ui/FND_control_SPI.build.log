@@ -1,0 +1,10 @@
+15:23:33 **** Incremental Build of configuration Debug for project FND_control_SPI ****
+make -j8 all 
+arm-none-eabi-size  FND_control_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8592	     12	   1692	  10296	   2838	FND_control_SPI.elf
+Finished building: default.size.stdout
+ 
+
+15:23:33 Build Finished. 0 errors, 0 warnings. (took 478ms)
+

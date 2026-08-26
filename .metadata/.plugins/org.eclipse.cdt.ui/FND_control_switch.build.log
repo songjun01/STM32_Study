@@ -1,5 +1,6 @@
-14:38:43 **** Incremental Build of configuration Debug for project FND_control_switch ****
+15:07:55 **** Build of configuration Debug for project FND_control_switch ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/FND_controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/FND_controller.d" -MT"Core/Src/FND_controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/FND_controller.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "FND_control_switch.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Study\STM32\OJ_tube\FND_control_switch\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FND_control_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: FND_control_switch.elf
@@ -7,11 +8,11 @@ Finished building target: FND_control_switch.elf
 arm-none-eabi-size  FND_control_switch.elf 
 arm-none-eabi-objdump -h -S FND_control_switch.elf  > "FND_control_switch.list"
    text	   data	    bss	    dec	    hex	filename
-   7332	     12	   1604	   8948	   22f4	FND_control_switch.elf
+   7308	     12	   1604	   8924	   22dc	FND_control_switch.elf
 Finished building: default.size.stdout
  
 Finished building: FND_control_switch.list
  
 
-14:38:45 Build Finished. 0 errors, 0 warnings. (took 1s.809ms)
+15:07:59 Build Finished. 0 errors, 0 warnings. (took 3s.236ms)
 
