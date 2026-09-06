@@ -16,6 +16,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Study\STM32\OJ_tube\TEMP_sensor"/>
 			<item value="C:\Study\STM32\OJ_tube\FND_control"/>
 			<item value="C:\Study\STM32\OJ_tube\first"/>
 			<item value="C:\Study\STM32\OJ_tube\first_"/>

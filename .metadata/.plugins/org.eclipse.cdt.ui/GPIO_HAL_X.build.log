@@ -1,4 +1,4 @@
-15:07:59 **** Build of configuration Debug for project GPIO_HAL_X ****
+14:00:23 **** Incremental Build of configuration Debug for project GPIO_HAL_X ****
 make -j8 all 
 arm-none-eabi-size  GPIO_HAL_X.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  GPIO_HAL_X.elf
 Finished building: default.size.stdout
  
 
-15:08:00 Build Finished. 0 errors, 0 warnings. (took 759ms)
+14:00:23 Build Finished. 0 errors, 0 warnings. (took 482ms)
 

@@ -1,16 +1,10 @@
-15:07:42 **** Build of configuration Debug for project FND_control ****
+14:00:18 **** Incremental Build of configuration Debug for project FND_control ****
 make -j8 all 
-arm-none-eabi-gcc -o "FND_control.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Study\STM32\OJ_tube\FND_control\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FND_control.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: FND_control.elf
- 
 arm-none-eabi-size  FND_control.elf 
-arm-none-eabi-objdump -h -S FND_control.elf  > "FND_control.list"
    text	   data	    bss	    dec	    hex	filename
    6984	     12	   1604	   8600	   2198	FND_control.elf
 Finished building: default.size.stdout
  
-Finished building: FND_control.list
- 
 
-15:07:49 Build Finished. 0 errors, 0 warnings. (took 7s.785ms)
+14:00:21 Build Finished. 0 errors, 0 warnings. (took 2s.545ms)
 
