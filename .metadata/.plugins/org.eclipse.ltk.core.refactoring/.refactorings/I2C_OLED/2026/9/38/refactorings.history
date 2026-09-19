@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;I2C_OLED/Core/Lib/Inc/love.h&apos; to &apos;love_anim.h&apos;" description="Rename resource &apos;love.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Lib/Inc/love.h" name="love_anim.h" stamp="1789286112254" updateReferences="true"/>
+</session>
