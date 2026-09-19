@@ -88,27 +88,27 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
-  volatile unsigned int *reg = 0x40020014;  // AHB1 GPIOA_BASE(0x40020000) + GPIOA_ODR(0x14)
-  *reg |= 0x20;
+  //volatile unsigned int *reg = 0x40020014;  //GPIOA ODR = AHB1 GPIOA_BASE(0x40020000) + GPIOA_ODR(0x14)
+  //*reg |= 0x20;  // 0010 0000 GPIOA ODR의 5번 bit를 1로 만듬. 즉, PA5를 HIGH
 
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-  GPIO_InitStruct.Pin = LD2_LED_Pin;    // 1<<5
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;    // 1
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;    // 2
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;    // 2
-  HAL_GPIO_Init(LD2_LED_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  volatile unsigned int *reg2 = 0x40020018;
+  //volatile unsigned int *reg2 = 0x40020018;   // GPIOA BSRR
   while (1)
   {
-	*reg2 = 0x20;
+	  /*
+	*reg2 = 0x20;   // 0010 0000 GPIOA BSRR lower 16bit PA5 SET
 	HAL_Delay(1000);
-	*reg2 = 0x00200000;
-	HAL_Delay(100);
+	*reg2 = 0x00200000;   // 0010 0000 GPIOA BSRR upper 16bit PA5 RESET
+	HAL_Delay(100);*/
+
+	GPIOA->BSRR = GPIO_PIN_5;   // GPIOA BSRR lower 16bit PA5 SET
+	HAL_Delay(1000);
+	GPIOA->BSRR = (GPIO_PIN_5 << 16);   // GPIOA BSRR upper 16bit PA5 RESET
+	HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
